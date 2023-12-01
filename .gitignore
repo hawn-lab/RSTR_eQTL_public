@@ -50,3 +50,14 @@ rsconnect/
 
 # MAC
 *.DS_Store
+
+# Data files
+data/metadata/2023.03.13RSTR_Hawn_metadata.csv
+data/rnaseq/GE.160_after_QC_voom_n80_201121.txt
+data/snp/snp_unfiltered_MAF_HWE_10e_6_n80_filtered_by_annot_201118.txt.gz
+data_clean/eQTL_data_all.RData
+data_clean/eQTL_data_by_stim.RData
+01_Cytokine/data/GE.delta_after_QC_voom_0_1_n80_201121.txt
+01_Cytokine/data/GE.media_voom_n80_201121.txt
+01_Cytokine/data/GE.TB_voom_n80_201121.txt
+01_Cytokine/data/Toms_request_all_variants_1MB_flanking_073120.xlsx
