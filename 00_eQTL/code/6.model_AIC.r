@@ -1,10 +1,5 @@
 # Set required libraries
 library(tidyverse)    # Collection of data manipulation and visualization packages
-library(readxl)       # For reading Excel files
-library(sjPlot)       # For producing various statistical plots
-library(gt)           # Grammar of Tables for nice tabular output
-# library(xlsx)         # For reading/writing Excel files
-library(openxlsx)     # For reading/writing Excel files
 
 #### eQTL data ####
 #Final TB induced eQTL
@@ -46,9 +41,9 @@ snp_original <- read_tsv("data/snp/snp_unfiltered_MAF_HWE_10e_6_n80_filtered_by_
 #Create separate media data
 snp_media <- snp_original
 
-snp_media_names <- paste(substr(colnames(snp_media[,2:ncol(snp_tb)]),
-                                regexpr('R', colnames(snp_media[,2:ncol(snp_tb)])), 
-                                regexpr('R', colnames(snp_media[,2:ncol(snp_tb)]))+7),
+snp_media_names <- paste(substr(colnames(snp_media[,2:ncol(snp_media)]),
+                                regexpr('R', colnames(snp_media[,2:ncol(snp_media)])), 
+                                regexpr('R', colnames(snp_media[,2:ncol(snp_media)]))+7),
                          "MEDIA",sep = "_")
 
 colnames(snp_media) <- c("rsID",snp_media_names)
@@ -82,7 +77,7 @@ GENE <- read_tsv("data/RNAseq/GE.160_after_QC_voom_n80_201121.txt",
                  )) %>%
   data.frame() %>%
   column_to_rownames(var = "gene_hgnc_symbol") %>%
-  dplyr::select(all_RSID)
+  dplyr::select(all_of(all_RSID))
 
 #### Covariate data ####
 # Create 01 stimulus status matrix
@@ -137,9 +132,9 @@ for(i in 1:nrow(eQTL)) {
   index <- c("(Intercept)", snps_name, "stim_status", "SEX", "AGE", paste(snps_name, "stim_status", sep = ":"))
   
   # Fit a linear model
-  lmodel_dominant <- lm(gene_lm ~ I(snps_lm < 2) * stim_status + cov_n160)
-  lmodel_recessive <- lm(gene_lm ~ I(snps_lm == 2) * stim_status + cov_n160)
-  lmodel_additive <- lm(gene_lm ~ snps_lm  * stim_status + cov_n160)
+  lmodel_dominant <- lm(gene_lm ~ I(snps_lm < 2) * stim + cov_n160)
+  lmodel_recessive <- lm(gene_lm ~ I(snps_lm == 2) * stim + cov_n160)
+  lmodel_additive <- lm(gene_lm ~ snps_lm  * stim + cov_n160)
   
   #Calculate AIC
   AIC_dominant <- AIC(lmodel_dominant)
