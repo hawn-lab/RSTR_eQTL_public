@@ -1,53 +1,53 @@
 V1,V2,term,parent,parentTerm,size
--0.3028587637403321,0.12063601036597864,regulation of cellular ketone metabolic process,GO:0006631,fatty acid metabolic process,4
--0.31700225891948364,0.11542550110241906,regulation of small molecule metabolic process,GO:0006631,fatty acid metabolic process,0
--0.24685594532179944,0.11294126250379496,cellular ketone metabolic process,GO:0006631,fatty acid metabolic process,3
--0.3767395625859203,0.14771161031169633,regulation of fatty acid metabolic process,GO:0006631,fatty acid metabolic process,7
--0.2595006709976534,0.020513120723498087,regulation of lipid metabolic process,GO:0019216,regulation of lipid metabolic process,38
--0.1940448728731255,-0.028031167361859993,activation of protein kinase activity,GO:0050731,positive regulation of peptidyl-tyrosine phosphorylation,67
--0.33987351190158865,0.11686366915315465,positive regulation of alcohol biosynthetic process,GO:1901617,organic hydroxy compound biosynthetic process,0
--0.3197303435964151,0.10687901191952004,positive regulation of small molecule metabolic process,GO:0006631,fatty acid metabolic process,0
--0.3666150492875383,0.14206347807373162,regulation of fatty acid oxidation,GO:0019216,regulation of lipid metabolic process,3
--0.34464061157579806,0.14509708152370446,fatty acid biosynthetic process,GO:0006631,fatty acid metabolic process,56
-0.2109663933807183,-0.3936935237324869,male sex differentiation,GO:0007548,sex differentiation,5
--0.14913610358999255,-0.06389072166220683,regulation of carbohydrate metabolic process,GO:0019216,regulation of lipid metabolic process,0
--0.2909330503641437,0.13343259153845535,monocarboxylic acid biosynthetic process,GO:0006631,fatty acid metabolic process,0
-0.6044416116052274,0.25300677457442716,mitotic metaphase plate congression,GO:0007080,mitotic metaphase plate congression,46
--0.33276862699935966,0.12289426877104362,regulation of alcohol biosynthetic process,GO:1901617,organic hydroxy compound biosynthetic process,0
--0.1614464582711398,0.0030583334093621773,organic hydroxy compound biosynthetic process,GO:1901617,organic hydroxy compound biosynthetic process,0
-0.1865802909465041,-0.31969701842657205,response to activity,GO:0014823,response to activity,44
-0.550536754868768,0.20538191169952075,metaphase plate congression,GO:0007080,mitotic metaphase plate congression,16
-0.5929769594451114,0.2820336334061955,mitotic spindle assembly,GO:0007052,mitotic spindle organization,50
-0.20988790091731419,-0.38996199511130114,sex differentiation,GO:0007548,sex differentiation,21
--0.07605562045875158,-0.07023585743342105,cellular carbohydrate metabolic process,GO:0019216,regulation of lipid metabolic process,4
-0.26946756767325936,-0.08506843011869655,chromosome localization,GO:0007080,mitotic metaphase plate congression,0
--0.2933008096341647,0.1324827116640474,organic acid biosynthetic process,GO:0006631,fatty acid metabolic process,0
-0.23387619868645737,-0.5397913151456558,cellular oxidant detoxification,GO:0098869,cellular oxidant detoxification,77
--0.17442223850101082,0.016378391326204465,lipid oxidation,GO:0019216,regulation of lipid metabolic process,6
--0.18734351323099502,-0.025155257696361698,negative regulation of phosphorylation,GO:0050731,positive regulation of peptidyl-tyrosine phosphorylation,20
--0.33193231837979487,0.13997392209125614,fatty acid metabolic process,GO:0006631,fatty acid metabolic process,91
--0.2157564792521333,-0.016044157549114105,positive regulation of protein kinase activity,GO:0050731,positive regulation of peptidyl-tyrosine phosphorylation,61
-0.23379502108193498,-0.5391247865930975,cellular response to toxic substance,GO:0098869,cellular oxidant detoxification,7
-0.579159672630773,0.2704442772198269,mitotic spindle organization,GO:0007052,mitotic spindle organization,58
-0.19282698456471967,-0.31863348361745325,reproductive system development,GO:0007548,sex differentiation,4
--0.1891083860013971,-0.0239860149648509,negative regulation of phosphorus metabolic process,GO:0050731,positive regulation of peptidyl-tyrosine phosphorylation,0
-0.566860606579852,0.25838940344911426,spindle assembly,GO:0007052,mitotic spindle organization,46
--0.28493080426372863,0.11128195864350682,alcohol biosynthetic process,GO:1901617,organic hydroxy compound biosynthetic process,0
-0.23202184527555833,-0.5634911175157404,detoxification,GO:0098869,cellular oxidant detoxification,0
--0.14352562448376566,-0.047693142963423425,regulation of cellular carbohydrate metabolic process,GO:0019216,regulation of lipid metabolic process,0
-0.5734771253228536,0.26534278889676133,microtubule cytoskeleton organization involved in mitosis,GO:0007052,mitotic spindle organization,2
--0.26228322250454694,0.019271481991228287,positive regulation of lipid metabolic process,GO:0019216,regulation of lipid metabolic process,1
--0.20916040159707397,-0.014927517189728198,positive regulation of kinase activity,GO:0050731,positive regulation of peptidyl-tyrosine phosphorylation,73
-0.5006410030178099,0.20084921611152656,organelle fission,GO:0007052,mitotic spindle organization,0
-0.5917660413344297,0.28011179278601667,mitotic sister chromatid segregation,GO:0007052,mitotic spindle organization,35
--0.30119428759659334,0.04954719478349032,regulation of lipid biosynthetic process,GO:0019216,regulation of lipid metabolic process,9
--0.23868799536371288,0.03486666523362575,steroid biosynthetic process,GO:0019216,regulation of lipid metabolic process,31
--0.20016646390013684,-0.02346447144095879,positive regulation of peptidyl-tyrosine phosphorylation,GO:0050731,positive regulation of peptidyl-tyrosine phosphorylation,95
--0.17472737238503283,-0.012889928132790092,ribose phosphate biosynthetic process,GO:0050731,positive regulation of peptidyl-tyrosine phosphorylation,2
--0.13839351407380102,-0.009044410466589608,purine-containing compound biosynthetic process,GO:1901617,organic hydroxy compound biosynthetic process,0
-0.5696078010920179,0.2598266384755499,sister chromatid segregation,GO:0007052,mitotic spindle organization,3
-0.5721190860401112,0.26394829832592254,spindle organization,GO:0007052,mitotic spindle organization,20
--0.18236529319357872,0.020459312126368385,lipid modification,GO:0019216,regulation of lipid metabolic process,7
-0.2112855690364972,-0.3948353701923113,development of primary sexual characteristics,GO:0007548,sex differentiation,1
-0.23217015330650861,-0.5640474881855122,response to toxic substance,GO:0098869,cellular oxidant detoxification,74
--0.3089644119619155,0.09259486329918581,nucleoside phosphate biosynthetic process,GO:0050731,positive regulation of peptidyl-tyrosine phosphorylation,0
+-0.30260648090397546,0.12179751868004605,regulation of cellular ketone metabolic process,GO:0044262,cellular carbohydrate metabolic process,4
+-0.3163239751731717,0.11678659103536558,regulation of small molecule metabolic process,GO:0044262,cellular carbohydrate metabolic process,0
+-0.2465505456169082,0.11331204118251294,cellular ketone metabolic process,GO:0044262,cellular carbohydrate metabolic process,3
+-0.3764842266360544,0.15039780255581472,regulation of fatty acid metabolic process,GO:0044262,cellular carbohydrate metabolic process,7
+-0.26012318525806294,0.02317612130184503,regulation of lipid metabolic process,GO:0044262,cellular carbohydrate metabolic process,42
+-0.1926228173271469,-0.027063450786251022,activation of protein kinase activity,GO:0044262,cellular carbohydrate metabolic process,45
+-0.3380732977428107,0.11811817033656859,positive regulation of alcohol biosynthetic process,GO:0044262,cellular carbohydrate metabolic process,0
+-0.3181499001871136,0.10830548249921884,positive regulation of small molecule metabolic process,GO:0044262,cellular carbohydrate metabolic process,0
+-0.36752075630938497,0.1452424641766293,regulation of fatty acid oxidation,GO:0044262,cellular carbohydrate metabolic process,3
+-0.34337600645796756,0.14675690226398988,fatty acid biosynthetic process,GO:0044262,cellular carbohydrate metabolic process,53
+0.20697449207264776,-0.3990721476255072,male sex differentiation,GO:0061458,reproductive system development,5
+-0.15095390285844895,-0.06223028142324544,regulation of carbohydrate metabolic process,GO:0044262,cellular carbohydrate metabolic process,0
+-0.2896532088885304,0.13395858804426553,monocarboxylic acid biosynthetic process,GO:0044262,cellular carbohydrate metabolic process,0
+0.6083016754368119,0.24946791737477075,mitotic metaphase plate congression,GO:0050000,chromosome localization,47
+-0.33277362591363896,0.12442555342785999,regulation of alcohol biosynthetic process,GO:0044262,cellular carbohydrate metabolic process,0
+-0.1605318866221948,0.002363933106488104,organic hydroxy compound biosynthetic process,GO:0044262,cellular carbohydrate metabolic process,0
+0.18297171096812184,-0.32216309723090875,response to activity,GO:0014823,response to activity,46
+0.560520914670112,0.2094482889061926,metaphase plate congression,GO:0050000,chromosome localization,17
+0.60657067181601,0.2861502335273357,mitotic spindle assembly,GO:0048285,organelle fission,47
+0.20565116301984923,-0.3943056635216476,sex differentiation,GO:0061458,reproductive system development,19
+-0.07794918162075741,-0.06967163313203395,cellular carbohydrate metabolic process,GO:0044262,cellular carbohydrate metabolic process,4
+0.2669481507726026,-0.08898543833862102,chromosome localization,GO:0050000,chromosome localization,0
+-0.29226696068795205,0.13361742603604665,organic acid biosynthetic process,GO:0044262,cellular carbohydrate metabolic process,0
+0.22939185067065834,-0.5409878123840653,cellular oxidant detoxification,GO:0014823,response to activity,76
+-0.17625441302593445,0.018268958501440277,lipid oxidation,GO:0044262,cellular carbohydrate metabolic process,7
+-0.18971041436844158,-0.02254618218414754,negative regulation of phosphorylation,GO:0044262,cellular carbohydrate metabolic process,20
+-0.3312983756471034,0.14184682924029177,fatty acid metabolic process,GO:0044262,cellular carbohydrate metabolic process,85
+-0.21569770315764802,-0.014286517276674734,positive regulation of protein kinase activity,GO:0044262,cellular carbohydrate metabolic process,66
+0.22922443348095944,-0.540493703087089,cellular response to toxic substance,GO:0014823,response to activity,8
+0.5764669057471163,0.26072968591844387,mitotic spindle organization,GO:0048285,organelle fission,62
+0.1895239101655441,-0.32458831852856634,reproductive system development,GO:0061458,reproductive system development,5
+-0.19127008228835332,-0.02102124546855061,negative regulation of phosphorus metabolic process,GO:0044262,cellular carbohydrate metabolic process,0
+0.5872130226664556,0.26970465283487377,spindle assembly,GO:0048285,organelle fission,50
+-0.28376141322092924,0.11174058568999393,alcohol biosynthetic process,GO:0044262,cellular carbohydrate metabolic process,0
+0.22716612198730907,-0.5647060182068824,detoxification,GO:0014823,response to activity,0
+-0.14596660902112396,-0.04558600286731557,regulation of cellular carbohydrate metabolic process,GO:0044262,cellular carbohydrate metabolic process,0
+0.5710651967621199,0.25573658166705343,microtubule cytoskeleton organization involved in mitosis,GO:0048285,organelle fission,2
+-0.26136947804511096,0.02155355481897517,positive regulation of lipid metabolic process,GO:0044262,cellular carbohydrate metabolic process,1
+-0.20867314278099322,-0.01342713144715395,positive regulation of kinase activity,GO:0044262,cellular carbohydrate metabolic process,56
+0.49778288275001376,0.19154016395662796,organelle fission,GO:0048285,organelle fission,0
+0.5959591516144706,0.27719198452221416,mitotic sister chromatid segregation,GO:0048285,organelle fission,35
+-0.30174601391053213,0.052382524601628074,regulation of lipid biosynthetic process,GO:0044262,cellular carbohydrate metabolic process,8
+-0.23854085916425305,0.036313016945394,steroid biosynthetic process,GO:0044262,cellular carbohydrate metabolic process,29
+-0.2009573192431958,-0.02120852209441561,positive regulation of peptidyl-tyrosine phosphorylation,GO:0044262,cellular carbohydrate metabolic process,93
+-0.17794062907058564,-0.01079208013980787,ribose phosphate biosynthetic process,GO:0044262,cellular carbohydrate metabolic process,2
+-0.14244794404150662,-0.006666720201144532,purine-containing compound biosynthetic process,GO:0044262,cellular carbohydrate metabolic process,0
+0.5797976993111323,0.2634211947041845,sister chromatid segregation,GO:0048285,organelle fission,3
+0.5692562592915389,0.25435794396264355,spindle organization,GO:0048285,organelle fission,23
+-0.18274193882498158,0.0215248335819329,lipid modification,GO:0044262,cellular carbohydrate metabolic process,7
+0.20727780021899447,-0.40019547003375805,development of primary sexual characteristics,GO:0061458,reproductive system development,1
+0.22731138725830755,-0.5652674019242119,response to toxic substance,GO:0014823,response to activity,74
+-0.3110391066659608,0.09562729250135144,nucleoside phosphate biosynthetic process,GO:0044262,cellular carbohydrate metabolic process,1

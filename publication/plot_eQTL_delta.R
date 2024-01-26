@@ -73,16 +73,16 @@ plot_eQTL_delta <- function(to_plot, snp_anno, cis_anno=NULL,
     
     #Make titles
     if(type == "cis"){
-      plot_title <- paste("Cis", snp_rsid, "for", gene_id)
+      plot_title <- gene_id
       x_lab <- snp_rsid
     } else if(type == "trans"){
       #find cis gene for SNP
       gene_id2 <- cis_anno %>% filter(snp == snp_rsid) %>% pull(gene) %>% unique()
-      plot_title <- paste("Trans", snp_rsid, "for", gene_id)
+      plot_title <- gene_id
       x_lab <- paste(snp_rsid, "(", gene_id2, ")")
     }
     
-    #Add FDR
+    #Add P
     if(FDR & type=="trans"){
       data_lm_fdr <- to_plot %>% 
         mutate(facet.lab=paste("P =", signif(p.value, digits=2))) %>% 
@@ -105,7 +105,7 @@ plot_eQTL_delta <- function(to_plot, snp_anno, cis_anno=NULL,
       stat_summary(fun=mean, geom="errorbar",
                    aes(ymax=after_stat(y), ymin=after_stat(y)),
                    width=0.5) +
-      labs(y=paste(gene_id,"Change in normalized log2 expression","+Mtb - Media",sep="\n"),
+      labs(y=paste(gene_id,"Change in normalized log2 expression","+Mtb - Uninfected",sep="\n"),
            x=x_lab,
            color="Genotype",
            title=plot_title) + 
@@ -115,7 +115,7 @@ plot_eQTL_delta <- function(to_plot, snp_anno, cis_anno=NULL,
       geom_abline(aes(slope = slope, intercept = intercept),
                   col = "black")  +
       theme(axis.line = element_line(color = "black"),
-            plot.title.position = "plot") +
+            plot.title = element_text(hjust = 0.5)) +
       #Recode legend
       scale_color_manual(values = c("#117733","#88CCEE","#AA4499"),
                          labels=c("REF/REF","REF/ALT","ALT/ALT"))

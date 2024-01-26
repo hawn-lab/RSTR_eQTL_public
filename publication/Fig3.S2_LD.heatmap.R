@@ -45,39 +45,39 @@ for(gene.OI in c("SIRPB1","PRKAG2","NDUFAF4")){
   
   #Format values and order SNPs in chr
   snp_ord <- snp_pos_filter %>% arrange(pos) %>% pull(id)
-  snp_filter_ord <- snp_filter %>% 
-    mutate(snpID = factor(snpID, levels=snp_ord)) %>% 
+  snp_filter_ord <- snp_filter %>%
+    mutate(snpID = factor(snpID, levels=snp_ord)) %>%
     arrange(snpID)
-  
+
   # List all SNP pairs
-  snps.to.LD <- t(combn(snp_filter_ord$snpID, m=2)) %>% 
-    as.data.frame() %>% 
+  snps.to.LD <- t(combn(snp_filter_ord$snpID, m=2)) %>%
+    as.data.frame() %>%
     #Remove duplicates
-    distinct(V1,V2) %>% 
+    distinct(V1,V2) %>%
     filter(V1!=V2)
-  
+
   #Calculate LD
-  LD.df <- snps.to.LD %>% 
+  LD.df <- snps.to.LD %>%
     mutate(R2="")
-  
+
   for(i in 1:nrow(LD.df)){
     print(i)
     #Get SNP pair for i index
     SNP.pair <- snps.to.LD[i, ] %>% unlist(use.names = FALSE)
-    
+
     #Filter allele data to SNP pairs
-    snp_filter.sub <- snp_filter %>% 
-      filter(snpID %in% SNP.pair) %>% 
-      column_to_rownames("snpID") %>% 
+    snp_filter.sub <- snp_filter %>%
+      filter(snpID %in% SNP.pair) %>%
+      column_to_rownames("snpID") %>%
       t()
-    
+
     #Calculate LD R^2
     #Only run if > 1 alleles in bpth SNPs
-    no.snp1 <- unique(snp_filter.sub[,1][!is.na(snp_filter.sub[,1])]) %>% 
+    no.snp1 <- unique(snp_filter.sub[,1][!is.na(snp_filter.sub[,1])]) %>%
       length()
-    no.snp2 <- unique(snp_filter.sub[,2][!is.na(snp_filter.sub[,2])]) %>% 
+    no.snp2 <- unique(snp_filter.sub[,2][!is.na(snp_filter.sub[,2])]) %>%
       length()
-    
+
     if(no.snp1 > 1 & no.snp2 > 1){
       LD.df[i, "R2"] <- genetics::LD(as.genotype(snp_filter.sub[,1]),
                                      as.genotype(snp_filter.sub[,2]))[["R^2"]]
@@ -85,14 +85,16 @@ for(gene.OI in c("SIRPB1","PRKAG2","NDUFAF4")){
       LD.df[i, "R2"] <- NA
     }
   }
-  
-  LD.df.format <- LD.df %>% 
-    mutate(R2=as.numeric(R2)) %>% 
+
+  LD.df.format <- LD.df %>%
+    mutate(R2=as.numeric(R2)) %>%
     mutate(V1 = factor(V1, levels=snp_ord),
            V2 = factor(V2, levels=snp_ord))
-  
+
   save(LD.df.format, file=paste0("publication/data/",gene.OI,".LD.RData"))
 
+  # load(paste0("publication/data/",gene.OI,".LD.RData"))
+  
   print("Plotting")
   #### Heatmaps ####
   LD3 <- LD.df.format %>% 
@@ -122,13 +124,13 @@ for(gene.OI in c("SIRPB1","PRKAG2","NDUFAF4")){
     
     ggplot(aes(x=pos, y=-log10(FDR))) +
     geom_point(alpha=0.5, shape=16) +
-    geom_text_repel(aes(label = label), direction = "both", show.legend = FALSE) +
+    geom_text_repel(aes(label = label), direction = "x", show.legend = FALSE) +
     geom_hline(yintercept = -log10(0.01), lty="dashed") +
     theme_classic() +
     labs(x = "", color="") +
     theme(axis.text.x=element_blank(),
           axis.ticks.x=element_blank())
-  # LD1 
+  # LD1
   
   #### Connecting lines ####
   span <- max(eqtl_pos$pos)-min(eqtl_pos$pos)
@@ -141,10 +143,9 @@ for(gene.OI in c("SIRPB1","PRKAG2","NDUFAF4")){
     geom_segment(aes(x=bot, xend=top), y=0, yend=1) +
     theme_void()
 
-  LD_plot_all <-LD1+LD2+LD3 +
+  plot.ls[[gene.OI]] <- LD1+LD2+LD3 +
     plot_layout(ncol=1, heights = c(0.3,0.1,sqrt(0.5)))
-  
-  plot.ls[[gene.OI]] <- LD_plot_all
+
 }
 
 #### Save ####

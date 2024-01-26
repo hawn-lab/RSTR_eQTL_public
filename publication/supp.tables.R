@@ -1,6 +1,6 @@
 library(tidyverse)
 
-#### Table SX. cis eQTL ####
+#### Table S1. cis eQTL ####
 # eQTL in MEDIA condition
 eQTL_MEDIA <- read_csv("00_eQTL/results/Matrix_eQTL/2023-06-14_eqtl_MEDIA_co.csv",
                        col_types = cols(
@@ -44,16 +44,16 @@ eQTL_all <- full_join(eQTL_TB, eQTL_MEDIA) %>%
 
 write_csv(eQTL_all, file="publication/TableS1.cis.eQTL.csv")
 
-#### Table SX. cytokine eQTL ####
+#### Table S5. cytokine eQTL ####
 eQTL_cyto <- read_csv("01_Cytokine/results/interaction_model/2023-06-21_cytokine_interaction_co.csv") %>% 
   select(snps,rsID, chr, pos, gene, Estimate, FDR) %>% 
   rename(estimate_interact=Estimate, FDR_interact=FDR) %>% 
   mutate(rsID = ifelse(rsID==snps, NA, rsID)) %>% 
   arrange(gene, snps)
 
-write_csv(eQTL_cyto, file="publication/TableS4.cyto.eQTL.csv")
+write_csv(eQTL_cyto, file="publication/TableS5.cyto.eQTL.csv")
 
-#### Table SX. enrichment ####
+#### Table S3. enrichment ####
 load("00_eQTL/results/enrichment.RData")
 map <- read_csv("publication/rrvgo_map.csv") %>% 
   select(term, parentTerm) %>% 
@@ -68,4 +68,4 @@ enrich_all <- bind_rows(enrich_c2, enrich_c5) %>%
          size_pathway,`k/K`, FDR, genes) %>% 
   mutate(genes = as.character(genes))
 
-write_csv(enrich_all, file="publication/TableS2.eQTL.enrichment.csv")
+write_csv(enrich_all, file="publication/TableS3.eQTL.enrichment.csv")

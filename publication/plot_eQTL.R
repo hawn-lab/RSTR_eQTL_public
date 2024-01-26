@@ -78,12 +78,12 @@ plot_eQTL <- function(to_plot, snp_anno, cis_anno=NULL,
     
     #Make titles
     if(type == "cis"){
-      plot_title <- paste("Cis", snp_rsid, "for", gene_id)
+      plot_title <- gene_id
       x_lab <- snp_rsid
     } else if(type == "trans"){
       #find cis gene for SNP
       gene_id2 <- cis_anno %>% filter(snp == snp_rsid) %>% pull(gene) %>% unique()
-      plot_title <- paste("Trans", snp_rsid, "for", gene_id)
+      plot_title <- gene_id
       x_lab <- paste(snp_rsid, "(", gene_id2, ")")
     }
     
@@ -93,16 +93,18 @@ plot_eQTL <- function(to_plot, snp_anno, cis_anno=NULL,
         select(snp, gene, Media, `+Mtb`) %>% 
         pivot_longer(Media:`+Mtb`, names_to = "status", values_to = "FDR") %>% 
         right_join(data_lm) %>% 
+        mutate(status = recode(status, "Media"="Uninfected")) %>% 
         mutate(facet.lab = paste(status, FDR, sep="\n"))
       
-      media_lvl <- data_lm_fdr$facet.lab[grepl("Media",data_lm_fdr$facet.lab)] %>% 
+      media_lvl <- data_lm_fdr$facet.lab[grepl("Uninfected",data_lm_fdr$facet.lab)] %>% 
         unique()
       data_lm_fdr <- data_lm_fdr %>% 
         mutate(facet.lab=fct_relevel(facet.lab, media_lvl, after=0))
     
       } else {
       data_lm_fdr <- data_lm %>% 
-        mutate(facet.lab=factor(status, levels=c("Media","+Mtb")))
+        mutate(facet.lab=factor(status, levels=c("Media","+Mtb"))) %>% 
+        mutate(facet.lab=fct_recode(status, "Uninfected"="Media"))
     }
     
     plot_ls[[paste(gene_id,snp_id,sep="_")]] <- ggplot(
@@ -127,7 +129,7 @@ plot_eQTL <- function(to_plot, snp_anno, cis_anno=NULL,
       geom_abline(aes(slope = slope, intercept = intercept),
                   col = "black")  +
       theme(axis.line = element_line(color = "black"),
-            plot.title.position = "plot") +
+            plot.title = element_text(hjust = 0.5)) +
       #Recode legend
       scale_color_manual(values = c("#117733","#88CCEE","#AA4499"),
                          labels=c("REF/REF","REF/ALT","ALT/ALT"))
