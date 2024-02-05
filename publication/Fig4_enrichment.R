@@ -82,7 +82,8 @@ enrich_to_plot <- bind_rows(enrich_c2_signif, df2) %>%
 map <- map_string(genes = genes.OI, score_threshold = 700)
 p1 <- plot_string(map, enrichment = enrich_to_plot, layout = "mds",
                   colors = c("#CC79A7","#0072B2","#F0E442",
-                             "#009E73","#56B4E9","#E69F00","grey80"),
+                             "#009E73","#D55E00","#56B4E9","#E69F00",
+                             "grey80"),
                   text_size = 3, node_size = 2
                   ) +
   theme(panel.border = element_rect(colour = "black", fill=NA, size=1)) +
